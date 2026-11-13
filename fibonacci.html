@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>The Fibonachi Sequence</h1>
+        <ul id="display">
+            <li>1</li>
+            <li>1</li>
+        </ul>
+    </body>
+    <script>
+        const fib = [1n, 1n]
+        setInterval(() => {
+            fib.push(fib[fib.length - 1] + fib[fib.length - 2])
+            const element = document.createElement("li")
+            element.textContent = fib[fib.length - 1];
+            document.getElementById("display").append(element)
+        }, 0)
+    </script>
+    <style>
+        @keyframes pulse {
+            0% {background-color: rgb(74, 115, 219);}
+            50% {background-color: rgb(30, 62, 144);}
+            100% {background-color: rgb(74, 115, 219);}
+        }
+
+
+        h1 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        li {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+        body {
+            background-color: rgb(74, 115, 219);
+        }
+        body:hover {
+            animation-name: pulse;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        cursor {
+            color:white;
+        }
+    </style>
+</html>
